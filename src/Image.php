@@ -23,7 +23,8 @@ class Image extends Uploader
      * @return string
      * @throws \Exception
      */
-    public function upload(array $image, string $name, int $width = 2000, ?array $quality = null): string
+    public function upload(array $image, string $name, int $width = 2000,
+                           ?array $quality = ["jpg" => 100, "png" => 0]): string
     {
         if (empty($image['type'])) {
             throw new \Exception("Not a valid data from image");
@@ -40,7 +41,7 @@ class Image extends Uploader
             return "{$this->path}/{$this->name}";
         }
 
-        $this->imageGenerate($width, ($quality ?? ["jpg" => 75, "png" => 5]));
+        $this->imageGenerate($width, $quality);
         return "{$this->path}/{$this->name}";
     }
 
