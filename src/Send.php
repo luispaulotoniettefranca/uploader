@@ -1,13 +1,8 @@
 <?php
 
-namespace CoffeeCode\Uploader;
+namespace Toniette\Uploader;
 
-/**
- * Class CoffeeCode Send
- *
- * @author Robson V. Leite <https://github.com/robsonvleite>
- * @package CoffeeCode\Uploader
- */
+
 class Send extends Uploader
 {
     /**
